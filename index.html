@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Hi Crush</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -11,59 +10,65 @@
       margin: 0;
       padding: 0;
       overflow-x: hidden;
+    }
+
+    .container {
       text-align: center;
+      padding-top: 100px;
     }
 
     h1 {
       font-size: 42px;
-      margin-top: 80px;
+      margin-bottom: 10px;
     }
 
     p {
       font-size: 18px;
     }
 
-    .button-container {
-      position: relative;
-      height: 200px;
-      margin-top: 30px;
-    }
-
     .button {
-      padding: 12px 24px;
-      font-size: 18px;
-      font-weight: bold;
       border: 2px solid black;
-      background-color: #eee;
+      padding: 10px 20px;
+      margin: 20px;
       cursor: pointer;
+      background: #eee;
+      font-weight: bold;
       transition: all 0.2s ease;
     }
 
-    #yesBtn {
-      margin-right: 20px;
-    }
-
     #noBtn {
-      position: absolute;
       border-color: red;
       color: red;
-      background-color: #fff;
+      position: absolute;
+    }
+
+    #yesBtn {
+      border-color: black;
     }
 
     #result {
       display: none;
-      max-width: 700px;
-      margin: 40px auto;
-      padding: 20px;
-      text-align: justify;
-      font-size: 18px;
-      line-height: 1.6;
+      margin-top: 30px;
     }
 
-    #result img {
-      width: 200px;
-      display: block;
-      margin: 0 auto 20px;
+    img {
+      max-width: 200px;
+      margin: 10px;
+    }
+
+    audio {
+      margin-top: 20px;
+    }
+
+    .letter {
+      font-size: 18px;
+      margin-top: 20px;
+      white-space: pre-wrap;
+      text-align: justify;
+      line-height: 1.6;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .no-reaction-container {
@@ -81,88 +86,66 @@
 </head>
 <body>
 
-  <h1>HI CRUSH 💖</h1>
-  <p>Gusto kita, can I court you?</p>
+  <div class="container">
+    <h1>HI CRUSH 💖</h1>
+    <p>gusto kita, can I court you?</p>
 
-  <div class="button-container">
     <button class="button" id="yesBtn">Yes</button>
     <button class="button" id="noBtn">No</button>
+
+    <div id="result">
+      <img src="pau01.jpg" alt="cute photo" width="200">
+      <p>hellu Pau… I mean, crushicakes &lt;3</p>
+
+      <div class="letter">
+        hellu Pau… I mean, crushicakes 😳<br><br>
+
+        you probably noticed it already — I’ve had a crush on you these past few days while we’ve been talking. I told you before in a small way, but now I want to say it clearly.<br><br>
+
+        Pau, I like you.<br>
+        I like the way you spend time with me — from our 5man (Euclid) to duos. Every time we talk, I feel excited and happy. I get that kilig feeling, especially when you speak. I already told you this before peroo, the way you talk is so cute, and your voice always stays in my head 😍😍<br><br>
+
+        You always make me smile without even trying. Just being with you, even in the simple ways, means a lot to me. I love how you spend time with me, from day till night. I always try to start a conversation, even about random things, just so I can catch up with you — because I just want to spend time with you. I want to learn more about you — how you think, what you feel, what makes you happy. Everything about you makes me want to stay a little longer.<br><br>
+
+        I already noticed you the day we joined the clan. You seemed masungit, pero baby girl naman pala 🥺. I never saw you lumalapag sa GC na tumatawa or nakikipagkulitan — puro barahan 😭, cold pa sakin mag-reply sa GC 😢. I never expected this day would come, pero I'll take this opportunity to say what my heart feels about you.<br><br>
+
+        So yeah… I like you, Pau. I really do. 💖<br><br>
+
+        I'm looking forward to learn more about you, and be the man that you deserve.
+      </div>
+    </div>
   </div>
 
-  <div id="result">
-    <img src="pau01.jpg" alt="cute photo">
-    <p>
-      hellu Pau… I mean, crushicakes 😳<br><br>
-      you probably noticed it already — I’ve had a crush on you these past few days while we’ve been talking.
-      I told you before in a small way, but now I want to say it clearly.<br><br>
-      Pau, I like you.<br>
-      I like the way you spend time with me — from our 5man (Euclid) to duos. Every time we talk, I feel excited and happy.
-      I get that kilig feeling, especially when you speak. I already told you this before peroo, the way you talk is so cute,
-      and your voice always stays in my head 😍😍<br><br>
-      You always make me smile without even trying. Just being with you, even in the simple ways, means a lot to me.
-      I love how you spend time with me, from day till night. I always try to start a conversation, even about random things,
-      just so I can catch up with you — because I just want to spend time with you. I want to learn more about you — how you think,
-      what you feel, what makes you happy. Everything about you makes me want to stay a little longer.<br><br>
-      I already noticed you the day we joined the clan. You seemed masungit, pero baby girl naman pala 🥺.
-      I never saw you lumalapag sa GC na tumatawa or nakikipagkulitan — puro barahan 😭, cold pa sakin mag-reply sa GC 😢.
-      I never expected this day would come, pero I'll take this opportunity to say what my heart feels about you.<br><br>
-      So yeah… I like you, Pau. I really do. 💖<br><br>
-      I'm looking forward to learn more about you, and be the man that you deserve.
-    </p>
-  </div>
-
+  <!-- Cute images appear here on No click -->
   <div class="no-reaction-container" id="noReactionContainer"></div>
 
-  <!-- Confetti JS CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-
   <script>
-    const yesBtn = document.getElementById("yesBtn");
     const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
     const result = document.getElementById("result");
     const noContainer = document.getElementById("noReactionContainer");
 
-    const noTexts = ["No", "Are you sure?", "Think again...", "😭 pls don't", "You're missing out", "baka ma fall ka rin 🥺"];
-    let noClickCount = 0;
-
+    // Show result on Yes
     yesBtn.addEventListener("click", () => {
       result.style.display = "block";
       yesBtn.style.display = "none";
       noBtn.style.display = "none";
-
-      // Fire confetti
-      confetti({
-        particleCount: 150,
-        spread: 100,
-        origin: { y: 0.6 }
-      });
     });
 
-    // Move no button on hover (desktop) or touch (mobile)
-    function moveNoButton() {
-      const container = document.querySelector('.button-container');
-      const maxX = container.offsetWidth - noBtn.offsetWidth;
-      const maxY = container.offsetHeight - noBtn.offsetHeight;
+    // Move No button on hover
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 50);
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
 
-      const randomX = Math.random() * maxX;
-      const randomY = Math.random() * maxY;
-
-      noBtn.style.left = ${randomX}px;
-      noBtn.style.top = ${randomY}px;
-    }
-
-    noBtn.addEventListener("mouseover", moveNoButton);
-    noBtn.addEventListener("touchstart", moveNoButton);
-
+    // Add image on No click
     noBtn.addEventListener("click", () => {
-      noClickCount++;
       const img = document.createElement("img");
-      img.src = "https://media.tenor.com/ln0G80jE7f8AAAAM/mochi-peach.gif";
+      img.src = "https://media.tenor.com/ln0G80jE7f8AAAAM/mochi-peach.gif"; // Cute crying peach
       img.alt = "sad";
       noContainer.appendChild(img);
-
-      const newText = noTexts[Math.floor(Math.random() * noTexts.length)];
-      noBtn.textContent = newText;
     });
   </script>
 
