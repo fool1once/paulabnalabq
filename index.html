@@ -2,87 +2,63 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hi Crush</title>
+  <title>Hi Crush 💖</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500;700&display=swap');
-
     body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to bottom right, #ffe1e8, #fff5e1);
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ffd1dc, #ffe5ec);
       margin: 0;
       padding: 0;
-      overflow-x: hidden;
-      transition: transform 0.1s ease;
+      overflow: hidden;
     }
 
     .container {
       text-align: center;
-      padding: 100px 20px 40px;
+      padding: 80px 20px 20px;
     }
 
     h1 {
-      font-family: 'Pacifico', cursive;
       font-size: 48px;
-      color: #e91e63;
-      margin-bottom: 20px;
-      text-shadow: 1px 1px 2px #fff;
+      color: #d63384;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px #fff;
     }
 
     p {
       font-size: 20px;
-      color: #333;
+      color: #444;
     }
 
     .button {
       border: none;
-      padding: 12px 28px;
+      padding: 12px 25px;
       margin: 20px;
       cursor: pointer;
-      background: #f8f8f8;
+      background: #fff;
       font-weight: bold;
-      font-size: 16px;
+      font-size: 18px;
       border-radius: 30px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .button:hover {
+      transform: scale(1.1);
+      background: #ffe0f0;
     }
 
     #noBtn {
-      color: red;
-      border: 2px solid red;
+      color: #d9534f;
       position: absolute;
-      background: white;
-    }
-
-    #noBtn:hover {
-      transform: scale(1.1) rotate(5deg);
-      background-color: #ffe6e6;
     }
 
     #yesBtn {
-      color: white;
-      background: #4caf50;
-      border: 2px solid #388e3c;
-    }
-
-    #yesBtn:hover {
-      background: #66bb6a;
-      transform: scale(1.1);
+      color: #28a745;
     }
 
     #result {
       display: none;
-      margin-top: 40px;
-      animation: fadeIn 1s ease-in;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    img {
-      max-width: 200px;
-      margin: 10px;
+      margin-top: 30px;
     }
 
     .letter {
@@ -92,12 +68,11 @@
       text-align: justify;
       line-height: 1.6;
       max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-      background: rgba(255,255,255,0.7);
+      margin: 30px auto;
+      background: #fff;
       padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
     .no-reaction-container {
@@ -105,7 +80,6 @@
       top: 80px;
       right: 10px;
       width: 100px;
-      z-index: 999;
     }
 
     .no-reaction-container img {
@@ -113,23 +87,12 @@
       margin: 5px 0;
     }
 
-    /* Shake animation */
-    @keyframes shake {
-      0% { transform: translate(1px, 1px) rotate(0deg); }
-      10% { transform: translate(-1px, -2px) rotate(-1deg); }
-      20% { transform: translate(-3px, 0px) rotate(1deg); }
-      30% { transform: translate(3px, 2px) rotate(0deg); }
-      40% { transform: translate(1px, -1px) rotate(1deg); }
-      50% { transform: translate(-1px, 2px) rotate(-1deg); }
-      60% { transform: translate(-3px, 1px) rotate(0deg); }
-      70% { transform: translate(3px, 1px) rotate(-1deg); }
-      80% { transform: translate(-1px, -1px) rotate(1deg); }
-      90% { transform: translate(1px, 2px) rotate(0deg); }
-      100% { transform: translate(1px, -2px) rotate(-1deg); }
-    }
-
-    .shake {
-      animation: shake 0.5s;
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 9999;
     }
   </style>
 </head>
@@ -137,7 +100,7 @@
 
   <div class="container">
     <h1>HI CRUSH 💖</h1>
-    <p>gusto kita, can I court you?</p>
+    <p>Gusto kita, can I court you?</p>
 
     <button class="button" id="yesBtn">Yes</button>
     <button class="button" id="noBtn">No</button>
@@ -148,15 +111,27 @@
 
       <div class="letter">
         hellu Pau… I mean, crushicakes 😳<br><br>
-        you probably noticed it already — I’ve had a crush on you...<br><br>
-        (message trimmed for clarity, keep your full letter here!)
+
+        you probably noticed it already — I’ve had a crush on you these past few days while we’ve been talking. I told you before in a small way, but now I want to say it clearly.<br><br>
+
+        Pau, I like you.<br>
+        I like the way you spend time with me — from our 5man (Euclid) to duos. Every time we talk, I feel excited and happy. I get that kilig feeling, especially when you speak. I already told you this before peroo, the way you talk is so cute, and your voice always stays in my head 😍😍<br><br>
+
+        You always make me smile without even trying. Just being with you, even in the simple ways, means a lot to me. I love how you spend time with me, from day till night. I always try to start a conversation, even about random things, just so I can catch up with you — because I just want to spend time with you. I want to learn more about you — how you think, what you feel, what makes you happy. Everything about you makes me want to stay a little longer.<br><br>
+
+        I already noticed you the day we joined the clan. You seemed masungit, pero baby girl naman pala 🥺. I never saw you lumalapag sa GC na tumatawa or nakikipagkulitan — puro barahan 😭, cold pa sakin mag-reply sa GC 😢. I never expected this day would come, pero I'll take this opportunity to say what my heart feels about you.<br><br>
+
+        So yeah… I like you, Pau. I really do. 💖<br><br>
+
+        I'm looking forward to learn more about you, and be the man that you deserve.
       </div>
     </div>
   </div>
 
+  <!-- Reaction images -->
   <div class="no-reaction-container" id="noReactionContainer"></div>
 
-  <!-- Confetti Library -->
+  <!-- Confetti JS CDN -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
   <script>
@@ -164,59 +139,30 @@
     const yesBtn = document.getElementById("yesBtn");
     const result = document.getElementById("result");
     const noContainer = document.getElementById("noReactionContainer");
-    let noClickCount = 0;
 
-    // YES button: show result + confetti
+    // Show result & confetti on Yes
     yesBtn.addEventListener("click", () => {
       result.style.display = "block";
       yesBtn.style.display = "none";
       noBtn.style.display = "none";
-
-      // Confetti burst
-      confetti({
-        particleCount: 150,
-        spread: 80,
-        origin: { y: 0.6 }
-      });
-
-      // Optional: multiple bursts
-      setTimeout(() => {
-        confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
-      }, 500);
+      confetti(); // trigger confetti
     });
 
-    // NO button hover move
+    // Move No button on hover
     noBtn.addEventListener("mouseover", () => {
-      const x = Math.random() * (window.innerWidth - 150);
-      const y = Math.random() * (window.innerHeight - 100);
-      noBtn.style.left = ${x}px;
-      noBtn.style.top = ${y}px;
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 50);
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
     });
 
-    // NO button click
+    // Add sad image on No click
     noBtn.addEventListener("click", () => {
-      noClickCount++;
-
       const img = document.createElement("img");
       img.src = "https://media.tenor.com/ln0G80jE7f8AAAAM/mochi-peach.gif";
       img.alt = "sad";
       noContainer.appendChild(img);
-
-      if (noClickCount === 3) {
-        document.body.classList.add("shake");
-        alert("Ouch 😭 that's your 3rd NO! But I’m not giving up!");
-        setTimeout(() => {
-          document.body.classList.remove("shake");
-        }, 500);
-
-        const dramaImg = document.createElement("img");
-        dramaImg.src = "https://media.tenor.com/7lJtFijXJwkAAAAC/crying.gif";
-        dramaImg.alt = "drama";
-        noContainer.appendChild(dramaImg);
-      }
     });
   </script>
-
-  <p style="margin-top: 100px; text-align:center;">Created by You :)</p>
 </body>
 </html>
