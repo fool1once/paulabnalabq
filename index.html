@@ -40,6 +40,11 @@
       border-color: red;
       color: red;
       position: absolute;
+      transition: transform 0.2s ease;
+    }
+
+    #noBtn:hover {
+      transform: scale(1.1) rotate(2deg);
     }
 
     #yesBtn {
@@ -54,10 +59,6 @@
     img {
       max-width: 200px;
       margin: 10px;
-    }
-
-    audio {
-      margin-top: 20px;
     }
 
     .letter {
@@ -116,7 +117,6 @@
     </div>
   </div>
 
-  <!-- Cute images appear here on No click -->
   <div class="no-reaction-container" id="noReactionContainer"></div>
 
   <script>
@@ -125,7 +125,11 @@
     const result = document.getElementById("result");
     const noContainer = document.getElementById("noReactionContainer");
 
-    // Show result on Yes
+    const noTexts = ["No", "Are you sure?", "Think again...", "😭 pls don't", "You're missing out", "baka ma fall ka rin 🥺"];
+
+    let noClickCount = 0;
+
+    // Show result when Yes is clicked
     yesBtn.addEventListener("click", () => {
       result.style.display = "block";
       yesBtn.style.display = "none";
@@ -136,16 +140,27 @@
     noBtn.addEventListener("mouseover", () => {
       const x = Math.random() * (window.innerWidth - 100);
       const y = Math.random() * (window.innerHeight - 50);
-      noBtn.style.left = x + "px";
-      noBtn.style.top = y + "px";
+      noBtn.style.left = ${x}px;
+      noBtn.style.top = ${y}px;
     });
 
-    // Add image on No click
+    // On click, add a small cute image and change button text
     noBtn.addEventListener("click", () => {
+      noClickCount++;
       const img = document.createElement("img");
-      img.src = "https://media.tenor.com/ln0G80jE7f8AAAAM/mochi-peach.gif"; // Cute crying peach
+      img.src = "https://media.tenor.com/ln0G80jE7f8AAAAM/mochi-peach.gif";
       img.alt = "sad";
       noContainer.appendChild(img);
+
+      // Change text randomly
+      const newText = noTexts[Math.floor(Math.random() * noTexts.length)];
+      noBtn.textContent = newText;
+
+      // Optional: shrink or wiggle
+      noBtn.style.transform = "scale(0.95) rotate(-3deg)";
+      setTimeout(() => {
+        noBtn.style.transform = "scale(1) rotate(0deg)";
+      }, 200);
     });
   </script>
 
