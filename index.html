@@ -13,7 +13,7 @@
       background: linear-gradient(to right, #ffd1dc, #ffe5ec);
       margin: 0;
       padding: 0;
-      overflow-y: auto; /* ✅ Allows scrolling */
+      overflow-y: auto;
       height: 100vh;
     }
 
@@ -144,6 +144,61 @@
         opacity: 0;
       }
     }
+
+    /* 💬 Chat bubbles */
+    .chat-bubbles {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .bubble {
+      max-width: 70%;
+      padding: 10px 15px;
+      border-radius: 20px;
+      font-size: 16px;
+      line-height: 1.4;
+      position: relative;
+      opacity: 0;
+      animation: bubblePop 0.5s forwards;
+    }
+
+    .bubble.left {
+      background-color: #fff;
+      align-self: flex-start;
+      animation-delay: 0.5s;
+    }
+
+    .bubble.right {
+      background-color: #ffe0f0;
+      align-self: flex-end;
+      animation-delay: 1s;
+    }
+
+    .bubble:nth-child(3) {
+      animation-delay: 1.5s;
+    }
+
+    .bubble:nth-child(4) {
+      animation-delay: 2s;
+    }
+
+    .bubble:nth-child(5) {
+      animation-delay: 2.5s;
+    }
+
+    @keyframes bubblePop {
+      0% {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
   </style>
 </head>
 <body>
@@ -155,6 +210,15 @@
     <h1>HI CRUSH 💖</h1>
     <p>Gusto kita, can I court you?</p>
 
+    <!-- 💬 Chat Bubbles -->
+    <div class="chat-bubbles">
+      <div class="bubble left">Hehe hi crush 😳</div>
+      <div class="bubble right">Hii 👋</div>
+      <div class="bubble left">May sasabihin ako sayo...</div>
+      <div class="bubble right">Hmm ano yun? 🤔</div>
+      <div class="bubble left">Crush kita 😭</div>
+    </div>
+
     <button class="button" id="yesBtn">Yes</button>
     <button class="button" id="noBtn">No</button>
 
@@ -164,18 +228,12 @@
 
       <div class="letter">
         hellu Pau… I mean, crushicakes 😳<br><br>
-
         you probably noticed it already — I’ve had a crush on you these past few days while we’ve been talking. I told you before in a small way, but now I want to say it clearly.<br><br>
-
         Pau, I like you.<br>
         I like the way you spend time with me — from our 5man (Euclid) to duos. Every time we talk, I feel excited and happy. I get that kilig feeling, especially when you speak. I already told you this before peroo, the way you talk is so cute, and your voice always stays in my head 😍😍<br><br>
-
         You always make me smile without even trying. Just being with you, even in the simple ways, means a lot to me. I love how you spend time with me, from day till night. I always try to start a conversation, even about random things, just so I can catch up with you — because I just want to spend time with you. I want to learn more about you — how you think, what you feel, what makes you happy. Everything about you makes me want to stay a little longer.<br><br>
-
         I already noticed you the day we joined the clan. You seemed masungit, pero baby girl naman pala 🥺. I never saw you lumalapag sa GC na tumatawa or nakikipagkulitan — puro barahan 😭, cold pa sakin mag-reply sa GC 😢. I never expected this day would come, pero I'll take this opportunity to say what my heart feels about you.<br><br>
-
         So yeah… I like you, Pau. I really do. 💖<br><br>
-
         I'm looking forward to learn more about you, and be the man that you deserve.
       </div>
     </div>
