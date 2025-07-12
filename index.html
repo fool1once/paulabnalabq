@@ -13,7 +13,7 @@
       background: linear-gradient(to right, #ffd1dc, #ffe5ec);
       margin: 0;
       padding: 0;
-      overflow-y: auto;
+      overflow-y: auto; /* ✅ Allows scrolling */
       height: 100vh;
     }
 
@@ -103,7 +103,7 @@
       z-index: 9999;
     }
 
-    /* 💕 Animated Hearts */
+    /* 💕 Animated hearts */
     .heart {
       position: fixed;
       width: 20px;
@@ -112,7 +112,6 @@
       transform: rotate(45deg);
       animation: floatHeart 8s linear infinite;
       opacity: 0.7;
-      z-index: 1;
     }
 
     .heart::before,
@@ -145,59 +144,6 @@
         opacity: 0;
       }
     }
-
-    /* 🎉 Special Celebration */
-    #celebrationScreen {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #ffecf0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    #celebrationScreen h2 {
-      font-size: 60px;
-      color: #ff4081;
-      text-align: center;
-      margin-bottom: 10px;
-      animation: pop 0.5s ease;
-    }
-
-    #celebrationScreen p {
-      font-size: 24px;
-      color: #444;
-      max-width: 80%;
-      text-align: center;
-      margin: 10px;
-    }
-
-    .emoji {
-      font-size: 50px;
-      animation: bounce 1.5s infinite;
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-15px); }
-    }
-
-    @keyframes pop {
-      0% { transform: scale(0); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
   </style>
 </head>
 <body>
@@ -205,7 +151,7 @@
   <!-- ❤️ Floating Hearts -->
   <div id="heartContainer"></div>
 
-  <div class="container" id="mainContainer">
+  <div class="container">
     <h1>HI CRUSH 💖</h1>
     <p>Gusto kita, can I court you?</p>
 
@@ -218,8 +164,18 @@
 
       <div class="letter">
         hellu Pau… I mean, crushicakes 😳<br><br>
-        ... (letter remains unchanged)
-        <br><br>
+
+        you probably noticed it already — I’ve had a crush on you these past few days while we’ve been talking. I told you before in a small way, but now I want to say it clearly.<br><br>
+
+        Pau, I like you.<br>
+        I like the way you spend time with me — from our 5man (Euclid) to duos. Every time we talk, I feel excited and happy. I get that kilig feeling, especially when you speak. I already told you this before peroo, the way you talk is so cute, and your voice always stays in my head 😍😍<br><br>
+
+        You always make me smile without even trying. Just being with you, even in the simple ways, means a lot to me. I love how you spend time with me, from day till night. I always try to start a conversation, even about random things, just so I can catch up with you — because I just want to spend time with you. I want to learn more about you — how you think, what you feel, what makes you happy. Everything about you makes me want to stay a little longer.<br><br>
+
+        I already noticed you the day we joined the clan. You seemed masungit, pero baby girl naman pala 🥺. I never saw you lumalapag sa GC na tumatawa or nakikipagkulitan — puro barahan 😭, cold pa sakin mag-reply sa GC 😢. I never expected this day would come, pero I'll take this opportunity to say what my heart feels about you.<br><br>
+
+        So yeah… I like you, Pau. I really do. 💖<br><br>
+
         I'm looking forward to learn more about you, and be the man that you deserve.
       </div>
     </div>
@@ -227,14 +183,7 @@
 
   <div class="no-reaction-container" id="noReactionContainer"></div>
 
-  <!-- 🎊 Special Celebration Screen -->
-  <div id="celebrationScreen">
-    <h2>🎉 SHE SAID YES! 🎉</h2>
-    <div class="emoji">💗💍💑</div>
-    <p>You just made someone very, very happy. 💕 Let’s make more memories together!</p>
-  </div>
-
-  <!-- Confetti library -->
+  <!-- 🎉 Confetti library -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
   <script>
@@ -243,23 +192,13 @@
     const result = document.getElementById("result");
     const noContainer = document.getElementById("noReactionContainer");
     const heartContainer = document.getElementById("heartContainer");
-    const celebrationScreen = document.getElementById("celebrationScreen");
-    const mainContainer = document.getElementById("mainContainer");
 
     yesBtn.addEventListener("click", () => {
       result.style.display = "block";
       yesBtn.style.display = "none";
       noBtn.style.display = "none";
-      confetti({
-        particleCount: 300,
-        spread: 180
-      });
+      confetti();
       generateHearts();
-      setTimeout(() => {
-        mainContainer.style.display = "none";
-        celebrationScreen.style.display = "flex";
-        confetti({ particleCount: 300, spread: 360, origin: { y: 0.5 } });
-      }, 5000); // delay to let them read the letter first
     });
 
     noBtn.addEventListener("mouseover", () => {
@@ -276,7 +215,7 @@
       noContainer.appendChild(img);
     });
 
-    // 💕 Hearts generator
+    // 💕 Floating hearts generator
     function generateHearts() {
       for (let i = 0; i < 30; i++) {
         const heart = document.createElement('div');
