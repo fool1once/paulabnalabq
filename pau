@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hi Crush</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background: white;
+    }
+
+    h1 {
+      font-size: 32px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    .button {
+      border: 2px solid black;
+      padding: 10px 20px;
+      margin: 20px;
+      cursor: pointer;
+      background: #eee;
+      font-weight: bold;
+      transition: all 0.2s ease;
+    }
+
+    #noBtn {
+      border-color: red;
+      color: red;
+      position: absolute;
+    }
+
+    #yesBtn {
+      border-color: black;
+    }
+
+    #result {
+      display: none;
+      margin-top: 30px;
+    }
+
+    img {
+      max-width: 200px;
+      margin: 10px;
+    }
+
+    audio {
+      margin-top: 20px;
+    }
+
+    .letter {
+      font-size: 18px;
+      margin-top: 20px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>HI CRUSH</h1>
+  <p>gusto kita, can I court you?</p>
+
+  <button class="button" id="yesBtn">Yes</button>
+  <button class="button" id="noBtn">No</button>
+
+  <div id="result">
+    <img src="https://media.tenor.com/nxJX78E4ZjwAAAAM/peach-goma-love.gif" alt="blushing gif">
+    <img src="https://i.pinimg.com/originals/3e/84/93/3e8493e2ee97e06a9f98684284977a3d.jpg" alt="kermit hearts">
+    <p>hellu Pau… I mean, crushicakes &lt;3</p>
+
+    <div class="letter">
+      you probably noticed it already I’ve had a crush on you these past few days while we’ve been talking. I told you before in a small way, but now I want to say it clearly.
+
+      Pau, I like you.
+      I like the way you spend time with me from our 5man (euclid) to duos. every time we talk, I feel excited and happy. I get that kilig feeling, especially when you speak. I already told you this before peroo, the way you talk is so cute, and your voice always stays in my head 😍😍
+
+      you always make me smile without even trying. just being with you even in the simple ways, means a lot to me. I love how you spend time with me, from day till night. I always try to start a conversation, even about random things, just so I can catch up with you. because I just want to spend time with you. I want to learn more about you, how you think, what you feel, what makes you happy. everything about you makes me want to stay a little longer 
+
+      I alr notice u the day we joined the clan, you seems masungit. pero baby girl naman pala. I never saw you lumalapag sa gc na tumatawa or nakikipag kulitan, puro barahan 😭, cold pa sakin mag reply sa gc 😢. I never expect this day would come, pero I'll take this opportunity to say what my heart feel about you
+
+      So yeah… I like you, Pau. I really do. 
+
+      I'm looking forwards to learn more about u, and be the man that u deserve
+    </div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+    const result = document.getElementById("result");
+
+    yesBtn.addEventListener("click", () => {
+      result.style.display = "block";
+      yesBtn.style.display = "none";
+      noBtn.style.display = "none";
+    });
+
+    // Move "No" button around randomly when hovered
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 50);
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
+  </script>
+
+  <p style="margin-top: 100px;">Created by You :)</p>
+</body>
+</html>
